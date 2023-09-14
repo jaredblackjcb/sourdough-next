@@ -12,7 +12,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import isEmail from "validator/lib/isEmail";
-import isStrongPassword from "validator/lib/isStrongPassword";
+import { isValidPassword } from "@/lib/validators";
 import { useRouter } from "next/navigation";
 
 export default function Signup() {
@@ -22,15 +22,6 @@ export default function Signup() {
   const [password, setPassword] = useState("");
   const [passwordBlurred, setPasswordBlurred] = useState(false);
   const [checked, setChecked] = useState(false);
-  const isValidPassword = (password: string) => {
-    return isStrongPassword(password, {
-      minLength: 6,
-      minLowercase: 1,
-      minUppercase: 1,
-      minNumbers: 1,
-      minSymbols: 0,
-    });
-  };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

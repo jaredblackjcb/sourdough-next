@@ -76,7 +76,7 @@ export default function Login() {
         /> */}
         <Grid sx={{ mt: 3 }} container>
           <Grid item xs>
-            <Link href="/resetPassword">Forgot password?</Link>
+            <Link href="/reset-password">Forgot password?</Link>
           </Grid>
           <Grid item>
             <Link href="/signup">{"Don't have an account? Sign Up"}</Link>
