@@ -1,13 +1,15 @@
-import { Button, Container } from "@mui/material";
-
+import Link from "next/link";
 import React from "react";
-import LogoutButton from "./LogoutButton";
 
 export default function MainContent() {
   return (
-    <Container>
-      <Button variant="contained">Hello World</Button>
-      <LogoutButton />
-    </Container>
+    <div>
+      <h1>Landing Page</h1>
+      <Link href="/dashboard">Dashboard</Link>
+      <br />
+      <Link href="/login">Login</Link>
+      <br />
+      <Link href="/signup">Signup</Link>
+    </div>
   );
 }

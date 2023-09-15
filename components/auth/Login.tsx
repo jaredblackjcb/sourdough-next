@@ -109,7 +109,7 @@ export default function Login() {
 
     //   <form
     //     className="flex-1 flex flex-col w-full justify-center gap-2 text-foreground"
-    //     action="/api/auth/sign-in"
+    //     action="/api/auth/login"
     //     method="post"
     //   >
     //     <label className="text-md" htmlFor="email">

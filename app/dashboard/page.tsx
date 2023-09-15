@@ -2,7 +2,7 @@ import React from "react";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import LogoutButton from "@/components/LogoutButton";
+import LogoutButton from "@/components/ui/LogoutButton";
 
 export default async function Dashboard() {
   const supabase = createServerComponentClient({ cookies });
@@ -12,7 +12,7 @@ export default async function Dashboard() {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    redirect("/sign-in");
+    redirect("/login");
   }
   return (
     <div>

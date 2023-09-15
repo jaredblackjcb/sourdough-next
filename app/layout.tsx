@@ -5,6 +5,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 
 import AuthProvider from "@/components/AuthProvider";
+import Header from "@/components/ui/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,12 +23,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="en">
-      <body>
-        <AuthProvider accessToken={accessToken}>
+      <AuthProvider accessToken={accessToken}>
+        <body>
+          {accessToken && <Header userName={session?.user.email || ""} />}
           {children}
           {/* <ThemeRegistry options={{ key: "mui", prepend: true }}></ThemeRegistry> */}
-        </AuthProvider>
-      </body>
+        </body>
+      </AuthProvider>
     </html>
   );
 }
